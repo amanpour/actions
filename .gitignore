@@ -1,0 +1,8 @@
+Debug/*
+Release/*
+.cproject
+.project
+.settings/*
+*.exe
+*.so
+*.a
