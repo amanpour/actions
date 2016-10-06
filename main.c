@@ -23,6 +23,7 @@ int main( void )
     uint_t selection = 0;
 
     init_rand_gen();
+    create_array();
 
     while( 1U )
     {

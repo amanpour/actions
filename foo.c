@@ -28,7 +28,6 @@ uint_t foo( uint_t input )
     case 3U:
 //        printf( "7 * 41 = %d\n", multiple( 7, 41 ) );
 //        retval = SUCCESS;
-        create_array();
         retval = fill_array_glob();
         break;
     default:
