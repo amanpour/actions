@@ -11,21 +11,22 @@
 #include "bar.h"
 #include "operations.h"
 
+
 uint_t bar( uint_t input )
 {
-    int retval = FAILURE;
+    uint_t retval = FAILURE;
 
     switch( input )
     {
-    case 4:
+    case 4U:
         random();
         retval = SUCCESS;
         break;
-    case 5:
+    case 5U:
         printf( "27 + 12 = %d\n", sum( 27, 12 ) );
         retval = SUCCESS;
         break;
-    case 6:
+    case 6U:
         retval = print_msg( input );
         break;
     default:

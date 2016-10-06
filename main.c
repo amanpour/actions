@@ -22,7 +22,9 @@ int main( void )
     char_t input[MAX_INPUT_LEN];
     uint_t selection = 0;
 
-    while( 1 )
+    init_rand_gen();
+
+    while( 1U )
     {
         printf( "\nEnter a number (1-9) or q to quit: " );
         gets( input );
@@ -37,27 +39,27 @@ int main( void )
 
             switch( selection )
             {
-            case 1:
-            case 2:
-            case 3:
+            case 1U:
+            case 2U:
+            case 3U:
                 printf( "Group A\n" );
                 if( SUCCESS != foo( selection ) )
                 {
                     printf( "foo function failed!\n" );
                 }
                 break;
-            case 4:
-            case 5:
-            case 6:
+            case 4U:
+            case 5U:
+            case 6U:
                 printf( "Group B\n" );
                 if( SUCCESS != bar( selection ) )
                 {
                     printf( "bar function failed!\n" );
                 }
                 break;
-            case 7:
-            case 8:
-            case 9:
+            case 7U:
+            case 8U:
+            case 9U:
                 printf( "Group C\n" );
                 if( SUCCESS != qux( selection ) )
                 {

@@ -12,6 +12,7 @@
 #include "defs.h"
 
 #define MESSAGE_COUNT   5U
+#define ARRAY_SIZE      4U
 
 static const char_t* const msg[] =
 {
@@ -21,6 +22,24 @@ static const char_t* const msg[] =
     "Message4:",
     "Message5:"
 };
+
+static uint_t* g_int_array;
+
+void init_rand_gen( void )
+{
+    srand( time( NULL ) );
+}
+
+void create_array( void )
+{
+    int indx = 0;
+    g_int_array = ( uint_t* ) malloc( ARRAY_SIZE );
+
+    for( indx = 0; indx < ARRAY_SIZE; indx++ )
+    {
+        g_int_array[ indx ] = indx * indx;
+    }
+}
 
 uint_t print_msg( uint_t msg_num )
 {
@@ -60,13 +79,61 @@ uint_t multiple( uint_t a, uint_t b )
     return result;
 }
 
-void random( void )
+uint_t random( void )
 {
     uint_t rand_num = 0;
 
-    srand( time( NULL ) );
     rand_num = rand() % 100;
 
     printf( "Generated random number: %d\n", rand_num );
+
+    return rand_num;
 }
 
+void init_array( uint_t array[], uint_t size )
+{
+	uint_t i = 0;
+	
+	for( i = 0; i < size; i++ )
+	{
+		array[i] = 0U;
+	}
+	
+    printf( "Array has been initialized successfully.\n" );
+}
+
+uint_t fill_array_glob( void )
+{
+    uint_t indx = 0;
+    uint_t retval = FAILURE;
+
+    if( g_int_array )
+    {
+        for( indx = 0; indx < ARRAY_SIZE; indx++ )
+        {
+            g_int_array[ indx ] = random();
+        }
+
+        retval = SUCCESS;
+    }
+
+    return retval;
+}
+
+uint_t fill_array( uint_t* array, uint_t arr_size )
+{
+    uint_t indx = 0;
+    uint_t retval = FAILURE;
+
+    if( array )
+    {
+        for( indx = 0; indx < arr_size; indx++ )
+        {
+            array[ indx ] = random();
+        }
+
+        retval = SUCCESS;
+    }
+
+    return retval;
+}

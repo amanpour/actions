@@ -11,22 +11,26 @@
 #include "qux.h"
 #include "operations.h"
 
+#define ARRAY_SIZE  10
+
+
 uint_t qux( uint_t input )
 {
-    int retval = FAILURE;
+    uint_t retval = FAILURE;
+	uint_t array[ ARRAY_SIZE ];
 
     switch( input )
     {
-    case 7:
+    case 7U:
         printf( "37 * 15 = %d\n", multiple( 37, 15 ) );
         retval = SUCCESS;
         break;
-    case 8:
-        retval = print_msg( 4 );
-        break;
-    case 9:
-        random();
+    case 8U:
+        init_array( array, ARRAY_SIZE );
         retval = SUCCESS;
+       break;
+    case 9U:
+        retval = fill_array( array, ARRAY_SIZE );
         break;
     default:
         printf( "Invalid input for function qux!\n" );
