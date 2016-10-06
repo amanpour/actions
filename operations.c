@@ -137,3 +137,8 @@ uint_t fill_array( uint_t* array, uint_t arr_size )
 
     return retval;
 }
+
+void mul2( uint_t* arg )
+{
+    *arg = (*arg) * 2;
+}

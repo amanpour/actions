@@ -17,5 +17,6 @@ void random( void );
 void init_array( uint_t array[], uint_t size );
 uint_t fill_array_glob( void );
 uint_t fill_array( uint_t* array, uint_t arr_size );
+void mul2( uint_t* arg );
 
 #endif /* OPERATIONS_H_ */
