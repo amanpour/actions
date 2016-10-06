@@ -18,6 +18,7 @@ uint_t qux( uint_t input )
 {
     uint_t retval = FAILURE;
 	uint_t array[ ARRAY_SIZE ];
+	uint_t var = 27;
 
     switch( input )
     {
@@ -31,6 +32,12 @@ uint_t qux( uint_t input )
        break;
     case 9U:
         retval = fill_array( array, ARRAY_SIZE );
+        break;
+    case 10U:
+        printf( "%d * 2 = ", var );
+        mul2( &var );
+        printf( "%d\n", var );
+        retval = SUCCESS;
         break;
     default:
         printf( "Invalid input for function qux!\n" );

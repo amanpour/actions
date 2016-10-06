@@ -14,7 +14,7 @@
 #include "qux.h"
 #include "operations.h"
 
-#define MAX_INPUT_VAL   9
+#define MAX_INPUT_VAL   20
 #define MAX_INPUT_LEN   10
 
 int main( void )
@@ -61,6 +61,7 @@ int main( void )
             case 7U:
             case 8U:
             case 9U:
+            case 10U:
                 printf( "Group C\n" );
                 if( SUCCESS != qux( selection ) )
                 {
